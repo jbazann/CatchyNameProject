@@ -1,0 +1,46 @@
+:root {
+    --topbar-height: 3rem; 
+    /* A number that, when used, just makes things look right */
+    --topbar-button-holy-number: 0.5rem;
+}
+
+#topbar {
+    overflow-y: visible;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hotpink;
+    color: crimson;
+    position: sticky;
+    width: 100%;
+    box-sizing: border-box;
+    height: var(--topbar-height);
+    padding: var(--topbar-button-holy-number);
+    top: 0;
+    z-index: 6969;
+}
+
+.topbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: var(--topbar-button-holy-number);
+}
+
+.topbar-element {
+    display: flex;
+    align-items: center;
+}
+
+.topbar-button {
+    padding: var(--topbar-button-holy-number);
+    border-radius: var(--topbar-button-holy-number);
+    border-color: black;
+    border-width: 0.1rem;
+    border-style: solid;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
