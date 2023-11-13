@@ -4,15 +4,12 @@
     --topbar-button-holy-number: 0.5rem;
 }
 
-#topbar {
-    overflow-y: visible;
-}
-
 .topbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: hotpink;
+    overflow-y: visible;
     color: crimson;
     position: sticky;
     width: 100%;

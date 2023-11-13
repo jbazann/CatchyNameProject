@@ -2,35 +2,32 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html lang="en-US">
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html lang="en-US" data-th-lang="${#locale.toString()}">
     <head>
+        <title data-th-text="${title} ?: _">CatchyName</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>CatchyName</title>
-        <meta name="description" content="Write fancy stuff!">
+        <meta name="description" content="Write fancy stuff!" data-th-content="${description} ?: _">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- STYLESHEETS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="index.css" data-th-href="@{css/index.css}">
+        <link rel="stylesheet" data-th-href="@{css/topbar.css}">
+        <link rel="stylesheet" data-th-href="@{css/writebox.css}">
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience. Silly.</p>
         <![endif]-->
         
-        <div id="topbar"></div>
-        <div id="page-content">
-            <div id="left-panel">
-
+        <div class="topbar" data-th-insert="~{topbar :: topbar}"></div>
+        <div class="page-content">
+            <div class="left-panel" data-th-insert="~{}">
             </div>
-            <div id="main-panel">
-                <div id="writing-area"></div>
+            <div class="main-panel" data-th-insert="~{writebox :: writebox}">
             </div>
-            <div id="right-panel"></div>
+            <div class="right-panel" data-th-insert="~{}"></div>
         </div>
-
-        <script src="index.js" defer></script>
-        <script src="components/topbar/topbar.js" defer></script>
-        <script src="components/writing-area/writing-area.js" defer></script>
     </body>
 </html>

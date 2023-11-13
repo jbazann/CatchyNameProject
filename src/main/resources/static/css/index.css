@@ -4,26 +4,26 @@
     --border-width: 5px;
 }
 
-#page-content {
+.page-content {
     display: flex;
     justify-content: space-between;
     min-height: 150vh;
     overflow-x: hidden;
 }
 
-#left-panel {
+.left-panel {
     width: 25%;
     border-right: var(--border-width) solid var(--border-color);
     margin-right: calc(3*var(--border-width));
     box-sizing: border-box;
 }
 
-#main-panel {
+.main-panel {
     width: 40%;
     box-sizing: border-box;
 }
 
-#right-panel {
+.right-panel {
     width: 30%;
     border-left: var(--border-width) solid var(--border-color);
     margin-left: calc(3*var(--border-width));
