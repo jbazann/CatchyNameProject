@@ -2,7 +2,7 @@ import { sync } from './sheet-api.js';
 import * as evs from './typingevents.js';
 import { getOperation } from './format.js';
 
-export const textarea = document.getElementById('writebox-main-textarea');
+export const textarea = document.getElementById('sheet-textarea');
 
 let timeoutId = setTimeout(() => {});
 const threshold = 1500; 

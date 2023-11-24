@@ -43,8 +43,6 @@ export function getOperation(str) {
 
 // obviously this assumes a valid string dont b silly
 function parseOperation(str) {
-    let asd = 'asd';
-    asd.match()
     const trimmed = str.replace(GLOBAL_DELIMITER_OPEN,'').replace(GLOBAL_DELIMITER_CLOSE,'');
     if(trimmed.startsWith(APPEND)) return new TextareaOperation(trimmed.replace(APPEND,''),APPEND,null);
     if(trimmed.startsWith(FULL_REPLACE)) return new TextareaOperation(trimmed.replace(FULL_REPLACE,''),FULL_REPLACE,null);
