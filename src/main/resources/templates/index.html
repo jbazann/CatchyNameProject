@@ -12,9 +12,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- STYLESHEETS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <link rel="stylesheet" href="index.css" data-th-href="@{css/index.css}">
-        <link rel="stylesheet" data-th-href="@{css/topbar.css}">
-        <link rel="stylesheet" data-th-href="@{css/sheet.css}">
+        <link rel="stylesheet" href="css/index.css" data-th-href="${indexCss}">
+        <link rel="stylesheet" href="css/topbar.css" data-th-href="${topbarCss}">
+        <link rel="stylesheet" href="css/sheet.css" data-th-href="${sheetCss}">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -31,7 +31,7 @@
         </div>
 
         <!-- SCRIPTS -->
-        <script type="module" data-th-src="@{js/sheet.js}"></script>
+        <script type="module" data-th-src="${mainScript}"></script>
         
     </body>
 </html>
