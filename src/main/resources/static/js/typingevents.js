@@ -1,3 +1,5 @@
+"use strict";
+
 import {textarea} from './sheet.js';
 import * as format from './format.js';
 

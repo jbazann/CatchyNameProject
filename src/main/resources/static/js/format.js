@@ -1,3 +1,5 @@
+"use strict";
+
 export const FORMAT_VALIDATION_REGEX = '<69>(<noop>|<append>|<full-replace>|<insert>[0-9]+<\/insert>|<partial-replace>[0-9]+-[0-9]+<\/partial-replace>)(.|\n)*<\/69>'
 const INDEX_PARSING_REGEX = new RegExp('[0-9]+','g'); // I'd love to know why I can't add /.../g with just strings
 const INSERT_TAG_PARSING_REGEX = '<insert>[0-9]+<\/insert>';
@@ -19,8 +21,8 @@ export function append(str) {
     return GLOBAL_DELIMITER_OPEN+APPEND+str+GLOBAL_DELIMITER_CLOSE;
 }
 
-export function fullReplace(srt) {
-    return GLOBAL_DELIMITER_OPEN+FULL_REPLACE+srt+GLOBAL_DELIMITER_CLOSE;
+export function fullReplace(str) {
+    return GLOBAL_DELIMITER_OPEN+FULL_REPLACE+str+GLOBAL_DELIMITER_CLOSE;
 }
 
 export function insert(str,at) {
@@ -28,7 +30,7 @@ export function insert(str,at) {
 }
 
 export function partialReplace(str,from,to) {
-    return GLOBAL_DELIMITER_OPEN+PARTIAL_REPLACE_OPEN+from.toString()+'-'+to.toString()+PARTIAL_REPLACE_CLOSE+GLOBAL_DELIMITER_CLOSE;
+    return GLOBAL_DELIMITER_OPEN+PARTIAL_REPLACE_OPEN+from.toString()+'-'+to.toString()+PARTIAL_REPLACE_CLOSE+str+GLOBAL_DELIMITER_CLOSE;
 }
 
 export function noOp() {

@@ -1,4 +1,4 @@
-
+"use strict";
 
 export function sync(op) {
     fetch('/sheet/sync', {
@@ -10,7 +10,7 @@ export function sync(op) {
         if(!response.ok) {
             throw new Error('Invalid network response.');
         }
-        return response.json();
+        return response.text();
     })
     .then(data =>{
         console.log(`Received: ${JSON.stringify(data)}`);
