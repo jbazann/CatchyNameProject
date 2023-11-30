@@ -1,6 +1,8 @@
+"use strict";
+
 import { sync } from './sheet-api.js';
 import * as evs from './typingevents.js';
-import { getOperation } from './format.js';
+import { getOperation, fullReplace } from './format.js';
 
 export const textarea = document.getElementById('sheet-textarea');
 
@@ -51,7 +53,7 @@ function compositionHandler(event) {
 }
 
 function sendBufferedData() {
-    sync(operations[0]);
+    sync(operations);
     operations = [];
 }
 
@@ -65,3 +67,17 @@ function sendBufferedData() {
         textarea.addEventListener('keyup',keyUpHanlder);
     }
 })();
+
+
+(
+    /**
+     * Set the server cache to the client's cached value to prevent
+     * offline desync.
+     */
+    function initializeServerSheet() {
+        if(textarea) {
+            operations = [getOperation(fullReplace(textarea.value))];
+            sendBufferedData();
+        }
+    }
+)
