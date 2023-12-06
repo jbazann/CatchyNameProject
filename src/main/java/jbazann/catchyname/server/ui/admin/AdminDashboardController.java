@@ -1,4 +1,4 @@
-package jbazann.catchyname.server.admin;
+package jbazann.catchyname.server.ui.admin;
 
 import java.io.IOException;
 

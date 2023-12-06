@@ -1,9 +1,9 @@
-package jbazann.catchyname.server.admin;
+package jbazann.catchyname.server.ui.admin;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import jbazann.catchyname.server.sheet.SheetTrackingService;
+import jbazann.catchyname.server.ui.sheet.SheetTrackingService;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 

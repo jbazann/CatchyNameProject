@@ -1,4 +1,4 @@
-package jbazann.catchyname.server.home;
+package jbazann.catchyname.server.ui.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
