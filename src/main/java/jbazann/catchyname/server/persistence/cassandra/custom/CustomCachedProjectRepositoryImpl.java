@@ -17,7 +17,6 @@ public class CustomCachedProjectRepositoryImpl implements CustomCachedProjectRep
     CassandraOperations cassandra;
 
     @Override
-    @Transactional
     public boolean flush(UUID user) {
         CachedProject cached = cassandra.selectOne(query(where("id").is(user)), CachedProject.class);
         if(cached == null) return false; // TODO Exceptions
