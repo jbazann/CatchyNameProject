@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.CassandraOperations;
-import org.springframework.transaction.annotation.Transactional;
 
 import jbazann.catchyname.server.model.CachedProject;
 import jbazann.catchyname.server.model.Project;
