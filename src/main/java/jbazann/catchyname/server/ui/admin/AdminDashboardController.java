@@ -14,8 +14,6 @@ import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 @Controller
 public class AdminDashboardController {
 
-    private record SheetMessageWrapper(String type,String data){}
-
     @Autowired
     private AdminSheetUpdateService updateService;
 
@@ -27,7 +25,7 @@ public class AdminDashboardController {
         model.addAttribute("sheetCss","/../../css/sheet.css");
         return "index";
     }
-
+    
     @ResponseBody
     @GetMapping(value = "/admin/dashboard/watch-sheet")
     public SseEmitter watch() {
@@ -35,10 +33,9 @@ public class AdminDashboardController {
         updateService.getFlux().subscribe(
             data -> {
                 try{
-                    System.out.println("Trying to send:");
-                    System.out.println(data);
-                    emitter.send(SseEmitter.event().data(
-                        new SheetMessageWrapper("full-replace",data)));
+                    System.out.println("Trying to send:"); // TODO logs
+                    System.out.println(data); // TODO logs
+                    emitter.send(SseEmitter.event().data(data));
                 }catch(IOException e){
                     System.out.println(e.getLocalizedMessage());// TODO Exceptions
                 }

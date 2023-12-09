@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import jbazann.catchyname.server.ui.sheet.SheetTrackingService;
+import jbazann.catchyname.server.ui.sheet.SheetTrackingService.TrackingMessage;
 import reactor.core.publisher.Flux;
 import reactor.core.scheduler.Schedulers;
 
@@ -13,7 +14,7 @@ public class AdminSheetUpdateService {
     @Autowired
     private SheetTrackingService trackingService;
 
-    public Flux<String> getFlux() {
+    public Flux<TrackingMessage> getFlux() {
         return trackingService.getFlux().subscribeOn(Schedulers.boundedElastic());
     }
 

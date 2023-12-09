@@ -1,8 +1,7 @@
 package jbazann.catchyname.server.ui.sheet;
 
-import java.util.ArrayList;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,19 +12,12 @@ import reactor.core.publisher.Mono;
 @RestController
 public class SheetController {
 
-    public record SheetSyncData(
-        String content, 
-        String operation, 
-        ArrayList<Integer> metadata
-        ) {}
-
     @Autowired
-    private SheetTrackingService sheetTracker;
-    
+    private SheetStateService sheetState;
+
     @PostMapping(value = "/sheet/sync", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<String> sync(@RequestBody ArrayList<SheetSyncData> data) {
-
-        return Mono.just(sheetTracker.validateAndApply(data));
-
+    public Mono<HttpStatus> sync(@RequestBody SheetTrackingService.TrackingMessage data) {
+        sheetState.updateState(data.user(),data.content());
+        return Mono.just(HttpStatus.I_AM_A_TEAPOT);
     }
 }
