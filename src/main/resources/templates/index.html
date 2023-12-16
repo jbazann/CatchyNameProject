@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="../static/css/index.css" data-th-href="${indexCss}">
         <link rel="stylesheet" href="../static/css/topbar.css" data-th-href="${topbarCss}">
         <link rel="stylesheet" href="../static/css/sheet.css" data-th-href="${sheetCss}">
+        <link rel="stylesheet" href="../static/css/sidemodule.css">
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -23,11 +24,11 @@
         
         <div class="topbar" id="topbar-container" data-th-insert="~{topbar :: topbar}"></div>
         <div class="page-content">
-            <div class="left-panel" data-th-insert="~{}">
+            <div class="left-panel" id="left-panel" data-th-insert="~{}">
             </div>
-            <div class="main-panel" id="sheet-container" data-th-insert="~{sheet :: sheet}">
-            </div>
-            <div class="right-panel" data-th-insert="~{}"></div>
+            <main class="main-panel" id="sheet-container" data-th-insert="~{sheet :: sheet}">
+            </main>
+            <div class="right-panel" id="right-panel" data-th-insert="~{}"></div>
         </div>
 
         <!-- SCRIPTS -->

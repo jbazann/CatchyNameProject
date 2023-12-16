@@ -1,0 +1,25 @@
+.sidemodule-output {
+    font-size: 1rem;
+    overflow: scroll;
+}
+
+.sidemodule-box {
+    height: fit-content;
+    width: auto;
+    margin: 1rem;
+    padding: 1rem;
+    border: solid black 1px;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+#sample-sidemod-label {
+    display: block;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    border-bottom: solid black 0.15px;
+    margin-bottom: 0.25rem;
+}
+
+/*.title-area defined in sheet.css*/
+

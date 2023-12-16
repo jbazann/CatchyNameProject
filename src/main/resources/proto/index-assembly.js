@@ -26,6 +26,32 @@ fetch("topbar.html")
     })
     .catch(error => console.error("topbar.html: ",error));
 ;
+
+// LEFT SIDE-MODULE
+fetch("side-module.html")
+    .then(response => response.text())
+    .then(htmlContent => {
+        container = document.getElementById("left-panel");
+        div.innerHTML = htmlContent;
+        div.querySelectorAll('link[rel="stylesheet"]').forEach((stylesheet) => 
+            stylesheet.parentNode.removeChild(stylesheet));
+        container.innerHTML += div.innerHTML;
+    })
+    .catch(error => console.error("side-module.html: ",error));
+;
+    
+// RIGHT SIDE-MODULE
+fetch("side-module.html")
+    .then(response => response.text())
+    .then(htmlContent => {
+        container = document.getElementById("right-panel");
+        div.innerHTML = htmlContent;
+        div.querySelectorAll('link[rel="stylesheet"]').forEach((stylesheet) => 
+            stylesheet.parentNode.removeChild(stylesheet));
+        container.innerHTML += div.innerHTML;
+    })
+    .catch(error => console.error("side-module.html: ",error));
+;
     
 
 
