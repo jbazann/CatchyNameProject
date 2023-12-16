@@ -21,17 +21,19 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience. Silly.</p>
         <![endif]-->
         
-        <div class="topbar" data-th-insert="~{topbar :: topbar}"></div>
+        <div class="topbar" id="topbar-container" data-th-insert="~{topbar :: topbar}"></div>
         <div class="page-content">
             <div class="left-panel" data-th-insert="~{}">
             </div>
-            <div class="main-panel" data-th-insert="~{sheet :: sheet}">
+            <div class="main-panel" id="sheet-container" data-th-insert="~{sheet :: sheet}">
             </div>
             <div class="right-panel" data-th-insert="~{}"></div>
         </div>
 
         <!-- SCRIPTS -->
         <script type="module" data-th-src="${mainScript}"></script>
-        
+        <!--/* PROTOTYPE SCRIPTS -->
+        <script src="../proto/index-assembly.js"></script>
+        <!--*/-->
     </body>
 </html>
